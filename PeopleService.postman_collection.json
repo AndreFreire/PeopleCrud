@@ -1,0 +1,360 @@
+{
+	"info": {
+		"name": "PeopleService",
+		"_postman_id": "21de9218-3d09-70ef-123b-7d5de6733bb7",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Save person",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Pipoqueiro\",\n    \"lastName\": \"Osvaldo\",\n    \"documentId\": \"44157761243\",\n    \"birthday\": \"20180415\",\n    \"address\": {\n        \"street\": \"Rua das pipocas\",\n        \"number\": \"1357\",\n        \"zipcode\": \"02256000\",\n        \"neighborhood\": \"Vila do Milho\",\n        \"city\": \"São Paulo\",\n        \"state\": \"SP\"\n    },\n    \"phones\": [{\n        \"number\": \"98765409\",\n        \"type\": \"CELL_PHONE\"\n    }],\n    \"emails\": [\"osvaldo@pipoqueiro.com.br\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Save people",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t    \"name\": \"Pipoqueiro\",\n\t    \"lastName\": \"Osvaldo\",\n\t    \"documentId\": \"44157761243\",\n\t    \"birthday\": \"20180415\",\n\t    \"address\": {\n\t        \"street\": \"Rua das pipocas\",\n\t        \"number\": \"1357\",\n\t        \"zipcode\": \"02256000\",\n\t        \"neighborhood\": \"Vila do Milho\",\n\t        \"city\": \"São Paulo\",\n\t        \"state\": \"SP\"\n\t    },\n\t    \"phones\": [{\n\t        \"number\": \"98765409\",\n\t        \"type\": \"CELL_PHONE\"\n\t    }],\n\t    \"emails\": [\"osvaldo@pipoqueiro.com.br\"]\n\t},\n\t{\n\t    \"name\": \"Marceneiro\",\n\t    \"lastName\": \"Pedro\",\n\t    \"documentId\": \"47478730159\",\n\t    \"birthday\": \"20170415\",\n\t    \"address\": {\n\t        \"street\": \"Rua das madeiras\",\n\t        \"number\": \"1357\",\n\t        \"zipcode\": \"02256000\",\n\t        \"neighborhood\": \"Vila das Taboas\",\n\t        \"city\": \"São Paulo\",\n\t        \"state\": \"SP\"\n\t    },\n\t    \"phones\": [{\n\t        \"number\": \"98765321\",\n\t        \"type\": \"CELL_PHONE\"\n\t    }],\n\t    \"emails\": [\"pedro@marceneiro.com.br\"]\n\t}\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/people",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"people"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get person",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/person/5aed00b70d442758fc1d88ed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"5aed00b70d442758fc1d88ed"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update person",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"{",
+							"    \"id\": \"5aed02850d44275ae8a3fa4f\",",
+							"    \"name\": \"Pipoqueiro\",",
+							"    \"lastName\": \"Osvaldinho\",",
+							"    \"documentId\": \"44157761243\",",
+							"    \"birthday\": 20180415,",
+							"    \"address\": {",
+							"        \"street\": \"Rua das pipocas\",",
+							"        \"number\": \"1357\",",
+							"        \"zipcode\": \"02256000\",",
+							"        \"neighborhood\": \"Vila do Milho\",",
+							"        \"city\": \"São Paulo\",",
+							"        \"state\": \"SP\"",
+							"    },",
+							"    \"phones\": [",
+							"        {",
+							"            \"number\": \"98765409\",",
+							"            \"type\": \"CELL_PHONE\"",
+							"        }",
+							"    ],",
+							"    \"emails\": [",
+							"        \"osvaldo@pipoqueiro.com.br\"",
+							"    ]",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"5aee092c0d442764e085013f\",\n    \"name\": \"Pipoqueiro\",\n    \"lastName\": \"Osvaldinho\",\n    \"documentId\": \"44157761243\",\n    \"birthday\": 20180415,\n    \"address\": {\n        \"street\": \"Rua das pipocas\",\n        \"number\": \"1357\",\n        \"zipcode\": \"02256000\",\n        \"neighborhood\": \"Vila do Milho\",\n        \"city\": \"São Paulo\",\n        \"state\": \"SP\"\n    },\n    \"phones\": [\n        {\n            \"number\": \"98765409\",\n            \"type\": \"CELL_PHONE\"\n        }\n    ],\n    \"emails\": [\n        \"osvaldo@pipoqueiro.com.br\"\n    ],\n    \"status\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update people",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n    \"id\": \"5aed02850d44275ae8a3fa4f\",\n    \"name\": \"Pipoqueiro\",\n    \"lastName\": \"Osvaldinho\",\n    \"documentId\": \"44157761243\",\n    \"birthday\": 20180415,\n    \"address\": {\n        \"street\": \"Rua das pipocas\",\n        \"number\": \"1357\",\n        \"zipcode\": \"02256000\",\n        \"neighborhood\": \"Vila do Milho\",\n        \"city\": \"São Paulo\",\n        \"state\": \"SP\"\n    },\n    \"phones\": [\n        {\n            \"number\": \"98765409\",\n            \"type\": \"CELL_PHONE\"\n        }\n    ],\n    \"emails\": [\n        \"osvaldo@pipoqueiro.com.br\"\n    ]\n}]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/people",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"people"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete person",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"5aedd05d0d442724edd912b7\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete people",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"ids\": [\n\t\t\"5aecab220d442706059edda1\",\n\t\t\"5aecfdbb0d44275628866356\"\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/people",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"people"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Activate people",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"ids\": [\n\t\t\"5aed0ed00d44276762492ee2\",\n\t\t\"5aed0ed00d44276762492ee1\"\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/people/activate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"people",
+						"activate"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Deactivate people",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"ids\": [\n\t\t\"5aee092c0d442764e085013f\"\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/people/deactivate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"people",
+						"deactivate"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List people",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/people",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"people"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "People search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/people/search?name=Pipoqueiro&lastName=Pedro&documentId=123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"people",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Pipoqueiro",
+							"equals": true
+						},
+						{
+							"key": "lastName",
+							"value": "Pedro",
+							"equals": true
+						},
+						{
+							"key": "documentId",
+							"value": "123",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
